@@ -17,6 +17,9 @@ const app = express();
 app.use(cors({ origin: "*" }));
 app.use(bodyParser.json()); // or: app.use(express.json());
 
+app.get("/", (req: Request, res: Response) => {
+  res.send("✅ Connected to server");
+});
 // Routes
 app.post("/auth/request-otp", requestOtp);
 app.post("/auth/verify-otp", verifyOtp);
